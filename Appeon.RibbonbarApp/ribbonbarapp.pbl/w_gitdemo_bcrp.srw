@@ -1,6 +1,8 @@
 ﻿forward
 global type w_gitdemo_bcrp from window
 end type
+type cb_1 from commandbutton within w_gitdemo_bcrp
+end type
 type mc_1 from monthcalendar within w_gitdemo_bcrp
 end type
 end forward
@@ -17,16 +19,20 @@ boolean resizable = true
 long backcolor = 67108864
 string icon = "AppIcon!"
 boolean center = true
+cb_1 cb_1
 mc_1 mc_1
 end type
 global w_gitdemo_bcrp w_gitdemo_bcrp
 
 on w_gitdemo_bcrp.create
+this.cb_1=create cb_1
 this.mc_1=create mc_1
-this.Control[]={this.mc_1}
+this.Control[]={this.cb_1,&
+this.mc_1}
 end on
 
 on w_gitdemo_bcrp.destroy
+destroy(this.cb_1)
 destroy(this.mc_1)
 end on
 
@@ -59,4 +65,22 @@ boolean todaycircle = true
 boolean border = true
 borderstyle borderstyle = stylelowered!
 end type
+
+type cb_1 from commandbutton within w_gitdemo_bcrp
+integer x = 905
+integer y = 1004
+integer width = 402
+integer height = 112
+integer taborder = 20
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "PR998"
+end type
+
+event clicked;messagebox("Demo GIT", this.classname())
+end event
 
