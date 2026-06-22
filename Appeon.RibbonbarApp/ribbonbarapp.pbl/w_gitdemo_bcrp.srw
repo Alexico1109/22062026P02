@@ -36,7 +36,7 @@ destroy(this.cb_1)
 destroy(this.mc_1)
 end on
 
-event open;String ls_date
+event open;String ls_date, ls_descripcion
 
 ls_date = String(Now())  //PR 1000 Soporte
 end event
