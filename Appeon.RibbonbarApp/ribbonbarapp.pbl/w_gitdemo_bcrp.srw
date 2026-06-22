@@ -36,7 +36,7 @@ destroy(this.cb_1)
 destroy(this.mc_1)
 end on
 
-event open;String ls_date
+event open;String ls_date, ls_descripcion
 
 ls_date = String("Demo GIT")  //PR 1002 
 end event
