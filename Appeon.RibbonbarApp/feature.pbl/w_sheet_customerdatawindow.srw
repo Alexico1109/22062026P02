@@ -1,6 +1,8 @@
 ﻿forward
 global type w_sheet_customerdatawindow from w_sheet
 end type
+type cb_1 from commandbutton within w_sheet_customerdatawindow
+end type
 type cb_add from commandbutton within w_sheet_customerdatawindow
 end type
 type cb_delete from commandbutton within w_sheet_customerdatawindow
@@ -27,6 +29,7 @@ string title = "Customer Datawindow"
 boolean controlmenu = false
 string icon = ".\image\custom_datawindow.ico"
 boolean center = false
+cb_1 cb_1
 cb_add cb_add
 cb_delete cb_delete
 cb_save cb_save
@@ -53,6 +56,7 @@ end function
 on w_sheet_customerdatawindow.create
 int iCurrent
 call super::create
+this.cb_1=create cb_1
 this.cb_add=create cb_add
 this.cb_delete=create cb_delete
 this.cb_save=create cb_save
@@ -62,18 +66,20 @@ this.dw_browser=create dw_browser
 this.uo_pic_datawindow=create uo_pic_datawindow
 this.uo_pic_datawindow_detail=create uo_pic_datawindow_detail
 iCurrent=UpperBound(this.Control)
-this.Control[iCurrent+1]=this.cb_add
-this.Control[iCurrent+2]=this.cb_delete
-this.Control[iCurrent+3]=this.cb_save
-this.Control[iCurrent+4]=this.st_detail
-this.Control[iCurrent+5]=this.dw_detail
-this.Control[iCurrent+6]=this.dw_browser
-this.Control[iCurrent+7]=this.uo_pic_datawindow
-this.Control[iCurrent+8]=this.uo_pic_datawindow_detail
+this.Control[iCurrent+1]=this.cb_1
+this.Control[iCurrent+2]=this.cb_add
+this.Control[iCurrent+3]=this.cb_delete
+this.Control[iCurrent+4]=this.cb_save
+this.Control[iCurrent+5]=this.st_detail
+this.Control[iCurrent+6]=this.dw_detail
+this.Control[iCurrent+7]=this.dw_browser
+this.Control[iCurrent+8]=this.uo_pic_datawindow
+this.Control[iCurrent+9]=this.uo_pic_datawindow_detail
 end on
 
 on w_sheet_customerdatawindow.destroy
 call super::destroy
+destroy(this.cb_1)
 destroy(this.cb_add)
 destroy(this.cb_delete)
 destroy(this.cb_save)
@@ -407,4 +413,19 @@ end type
 on uo_pic_datawindow_detail.destroy
 call u_picture_tip::destroy
 end on
+
+type cb_1 from commandbutton within w_sheet_customerdatawindow
+integer x = 1637
+integer y = 36
+integer width = 567
+integer height = 112
+integer taborder = 30
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "DEMO GIT / Jenkins"
+end type
 
