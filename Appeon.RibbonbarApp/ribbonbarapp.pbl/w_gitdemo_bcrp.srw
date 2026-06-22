@@ -30,6 +30,11 @@ on w_gitdemo_bcrp.destroy
 destroy(this.mc_1)
 end on
 
+event open;String ls_date
+
+ls_date = String(Today())  //PR 999 Soporte
+end event
+
 type mc_1 from monthcalendar within w_gitdemo_bcrp
 integer x = 562
 integer y = 112
