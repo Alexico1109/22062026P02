@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Solution>
+  <Projects Default="Appeon.RibbonbarApp\ribbonbarapp.pbproj">
+    <Project Path="Appeon.RibbonbarApp\ribbonbarapp.pbproj"/>
+  </Projects>
+</Solution>

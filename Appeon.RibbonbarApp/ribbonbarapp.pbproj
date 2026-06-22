@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Project>
+  <Type Name="pb"/>
+  <Application Name="ribbonbarapp"/>
+  <Libraries AppEntry="ribbonbarapp.pbl">
+    <Library Path="ribbonbarapp.pbl"/>
+    <Library Path="feature.pbl"/>
+    <Library Path="feature2022.pbl"/>
+  </Libraries>
+  <Deployings>
+    <Deploying Deploy="1" Library="ribbonbarapp.pbl" Name="ui_cloud"/>
+  </Deployings>
+</Project>
