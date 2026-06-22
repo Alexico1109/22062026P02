@@ -32,7 +32,7 @@ end on
 
 event open;String ls_date
 
-ls_date = String(Today())  //PR 999 Soporte
+ls_date = String("Demo GIT Resolve")  //PR 1002 
 end event
 
 type mc_1 from monthcalendar within w_gitdemo_bcrp
